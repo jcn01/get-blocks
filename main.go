@@ -22,7 +22,7 @@ var (
 )
 
 const (
-	dbName   = "catapult"
+	dbName         = "catapult"
 	collectionName = "blocks"
 )
 
@@ -113,12 +113,12 @@ func main() {
 
 		blockData.size = documentSize
 		blocksData = append(blocksData, blockData)
-		
+
 		log.Printf("Fetching blocks for height %d...", blockData.Block.Height)
 
-        if blockData.Block.Height > maxFetchedHeight {
-            maxFetchedHeight = blockData.Block.Height
-        }
+		if blockData.Block.Height > maxFetchedHeight {
+			maxFetchedHeight = blockData.Block.Height
+		}
 	}
 
 	fileName := fmt.Sprintf("blocks-%v-%v.csv", startHeight, maxFetchedHeight)
@@ -129,7 +129,7 @@ func main() {
 	log.Printf("Data saved: %s", fileName)
 }
 
-func writeToCSV(data []BlockData, filename string) (error) {
+func writeToCSV(data []BlockData, filename string) error {
 	file, err := os.Create(filename)
 	if err != nil {
 		return err
