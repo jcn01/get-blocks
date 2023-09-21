@@ -50,6 +50,10 @@ func init() {
 		log.Fatal("Missing required flags")
 	}
 
+	if *startHeightPtr >= *endHeightPtr {
+		log.Fatal("Make sure 'start' is smaller than 'end'")
+	}
+
 	startHeight = *startHeightPtr
 	endHeight = *endHeightPtr
 	dbUrl = *urlPtr
