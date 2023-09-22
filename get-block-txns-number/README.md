@@ -1,3 +1,6 @@
+# get-block-txns-number
+Golang script for retrieving block transaction number from database on a block-by-block basis.
+
 ```
 go run main.go -start 1 -end 100 -url mongodb://localhost:27017
 ```
